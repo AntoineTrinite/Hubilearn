@@ -61,183 +61,26 @@
 
 
         <div class="courses-container">
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/randomguy.jpg" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Débutez en javascript en 20 heures seulement !</span>
-                        <div class="note-moyenne">4/5</div>
-                    </div>
-                    
-                    <span class="course-author">Julien Mercier programation web</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">22.5 heures au total - </span>
-                        <span class="total-level">Tous niveaux</span>
-                    </div>
-                </div>
-            </a>
 
-           <!-- Cours card -->
-           <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/herbe.jpg" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Supprimez sys32 et allez toucher de l'herbe</span>
-                        <div class="note-moyenne">2/5</div>
+            @foreach($courses as $cours)
+                <!-- Cours card -->
+                <a href="/courses/coursepresentation" class="course-card">
+                    <img class="course-img-part" src="{{$cours['image']}}" alt="random guy with coding background">
+                    <div class="course-text-part">
+                        <div class="title-part">
+                            <span class="course-title">{{$cours['titre']}}</span>
+                            <div class="note-moyenne">{{$cours['note']}}</div>
+                        </div>
+                        
+                        <span class="course-author">{{$cours['author']}}</span>
+                            <p class="course-descrition">{{$cours['description']}}</p>
+                        <div class="time-level-separator">
+                            <span class="total-time">{{$cours['totalhours']}} heures au total - </span>
+                            <span class="total-level">{{$cours['level']}}</span>
+                        </div>
                     </div>
-                    
-                    <span class="course-author">Jean random</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">0.03 heures au total - </span>
-                        <span class="total-level">Débutants</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/php.jpg" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Faire un os avec php ?</span>
-                        <div class="note-moyenne">6/5</div>
-                    </div>
-                    
-                    <span class="course-author">Jean possible développeur</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">175 heures au total - </span>
-                        <span class="total-level">Tous niveaux</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/bug.jpg" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Élevez les bugs vous même !</span>
-                        <div class="note-moyenne">5/5</div>
-                    </div>
-                    
-                    <span class="course-author">Julien Mercier programation web</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time"> ∞ heures au total - </span>
-                        <span class="total-level">Tous niveaux</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/python.jpg" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Python, comment retirer le venin des sepents efficacement</span>
-                        <div class="note-moyenne">1/5</div>
-                    </div>
-                    
-                    <span class="course-author">Julien Mercier programation web</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">5 heures au total - </span>
-                        <span class="total-level">niveau expert</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/error.png" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title"> </span>
-                        <div class="note-moyenne">0/5</div>
-                    </div>
-                    
-                    <span class="course-author">Julien Mercier programation web</span>
-                        <p class="course-descrition">Comment on met un titre ?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time"> heures au total - </span>
-                        <span class="total-level">Débutants</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/table.png" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Programmation orienté objet : codons une table !</span>
-                        <div class="note-moyenne">4/5</div>
-                    </div>
-                    
-                    <span class="course-author">Arthur charpentier</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">51 heures au total - </span>
-                        <span class="total-level">Tous niveaux</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/vim.png" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Mettre les touches de VsCode sur néovim</span>
-                        <div class="note-moyenne">3/5</div>
-                    </div>
-                    
-                    <span class="course-author">Julien Mercier programation web</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">10 heures au total - </span>
-                        <span class="total-level">Tous niveaux</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/courses/coursepresentation" class="course-card">
-                <img class="course-img-part" src="./img/hack.jpg" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Testez les capacités d'un serveur avec les attaques DDOS</span>
-                        <div class="note-moyenne">4/5</div>
-                    </div>
-                    
-                    <span class="course-author">Crétin hacker</span>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">22.5 heures au total - </span>
-                        <span class="total-level">Tous niveaux</span>
-                    </div>
-                </div>
-            </a>
+                </a>
+            @endforeach
         </div>
     </section>
     

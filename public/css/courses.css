@@ -176,8 +176,9 @@ footer {
 }
 
 .course-img-part {
+    object-fit: cover;
+    max-height: 200px;
     width: 300px;
-    height: 175px;
 }
 
 .course-text-part {

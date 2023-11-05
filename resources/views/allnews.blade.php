@@ -44,53 +44,21 @@
         <h2 class="all-news-title">News</h2>
 
         <div class="courses-container">
-            <!-- Cours card -->
-            <a href="/allnews/news" class="course-card">
-                <img class="course-img-part" src="./img/actucours.webp" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Mise à jour du cours PHP8: Venez découvrir les changements</span>
+            @foreach($news as $news)
+                <a href="/allnews/news" class="course-card">
+                    <img class="course-img-part" src="{{$news['Image']}}" alt="random guy with coding background">
+                    <div class="course-text-part">
+                        <div class="title-part">
+                            <span class="course-title">{{$news['Titre']}}</span>
+                        </div>
+                            <p class="course-descrition">{{$news['Resume']}}</p>
+                        <div class="time-level-separator">
+                            <span class="total-time">De {{$news['Auteur']}}</span>
+                            <span class="total-time">Le {{$news['Date']}}</span>
+                        </div>
                     </div>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">Le 31/10/2023</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/allnews/news" class="course-card">
-                <img class="course-img-part" src="./img/actuenquete.webp" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Résultats de l'enquête de la semaine : React toujours gagnant !</span>
-                    </div>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">Le 31/10/2023</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Cours card -->
-            <a href="/allnews/news" class="course-card">
-                <img class="course-img-part" src="./img/actulinkedin.webp" alt="random guy with coding background">
-                <div class="course-text-part">
-                    <div class="title-part">
-                        <span class="course-title">Suivez-nous sur linkedin pour plus dinformations</span>
-                    </div>
-                        <p class="course-descrition">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Illo cumque molestias quas assumenda doloremque amet temporibus excepturi consequuntur 
-                        dicta atque?</p>
-                    <div class="time-level-separator">
-                        <span class="total-time">Le 31/10/2023</span>
-                    </div>
-                </div>
-            </a>
+                </a>
+            @endforeach
            
         </div>
     </section>

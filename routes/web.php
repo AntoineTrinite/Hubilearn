@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\allNewsController;
+use App\Http\Controllers\courseController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,9 +34,7 @@ require __DIR__.'/auth.php';
 
 
 // Cours
-Route::get('/courses', function () {
-    return view('courses');
-});
+Route::get('/courses', [courseController::class, 'index']);
 
 Route::get('/courses/coursepresentation', function () {
     return view('coursepresentation');
@@ -46,9 +46,7 @@ Route::get('/courses/coursepresentation/coursesession', function () {
 
 
 // News
-Route::get('/allnews', function () {
-    return view('allnews');
-});
+Route::get('/allnews', [allNewsController::class, 'index']);
 
 Route::get('//allnews/news', function () {
     return view('news');
