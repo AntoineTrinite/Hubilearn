@@ -23,6 +23,11 @@
                 <div>
                     @auth
                         <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                        <x-responsive-nav-link :href="route('logout')" class="nav-link"
+                                    onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                        </x-responsive-nav-link>
                     @else
                         <a class="nav-link" href="{{ route('login') }}">Log in</a>
 
@@ -52,7 +57,7 @@
             <div class="actions-container">
                 @if (Route::has('login'))
                     @auth
-                        <a href="#" class="action-div cours">
+                        <a href="/courses" class="action-div cours">
                             <span class="action-title">Reprendre le dernier cours</span>
                             <div class="action-row">
                                 <p class="action-text">Débuter avec javascript en 20 heures</p>

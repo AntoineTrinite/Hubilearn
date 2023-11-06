@@ -23,6 +23,11 @@
                 <div>
                     @auth
                         <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                        <x-responsive-nav-link :href="route('logout')" class="nav-link"
+                                    onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                        </x-responsive-nav-link>
                     @else
                         <a class="nav-link" href="{{ route('login') }}">Log in</a>
 
@@ -261,18 +266,24 @@
         <div class="comment-container">
             <h3 class="course-presentation-part-title">Commentaires</h3>
 
-            <form action="#" method="post" class="commentaire-form">
-                <label class="comment-labels" for="title">Titre</label>
-                <input class="comment-input" type="text" name="title" placeholder="Ajoutez ici un titre">
+            @if (Route::has('login'))
+                    @auth
+                    <form action="#" method="post" class="commentaire-form">
+                        <label class="comment-labels" for="title">Titre</label>
+                        <input class="comment-input" type="text" name="title" placeholder="Ajoutez ici un titre">
 
-                <label class="comment-labels comment-labels-text" for="comment">Commentaire</label>
-                <textarea class="comment-input comment-text-input" name="comment" rows="4" cols="50" placeholder="Écrivez ici un commentaire ..."></textarea>
-                <div class="comment-input-send">
-                    <input class="btn-input-send" type="button" value="Envoyer">
-                </div>
-                
-            </form>
-
+                        <label class="comment-labels comment-labels-text" for="comment">Commentaire</label>
+                        <textarea class="comment-input comment-text-input" name="comment" rows="4" cols="50" placeholder="Écrivez ici un commentaire ..."></textarea>
+                        <div class="comment-input-send">
+                            <input class="btn-input-send" type="button" value="Envoyer">
+                        </div>
+                    </form>
+                    @else
+                        <a class="nav-comment-link" href="/login">
+                            <span class="nav-link-comment">Veuillez vous connecter pour rajouter un commentaire</span>
+                        </a>
+                    @endauth
+                @endif
             <div class="all-comments">
                 <!-- comment -->
                 <div class="comment">
@@ -395,7 +406,7 @@
             <div class="actions-container">
                 @if (Route::has('login'))
                     @auth
-                        <a href="#" class="action-div cours">
+                        <a href="/courses" class="action-div cours">
                             <span class="action-title">Reprendre le dernier cours</span>
                             <div class="action-row">
                                 <p class="action-text">Débuter avec javascript en 20 heures</p>
