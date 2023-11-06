@@ -1,7 +1,7 @@
 <x-app-layout>
-
     <div class="main-container">
         <section class="active-section">
+        <h2 class="personnal-space">Bonjour Antoine,</h2>
             <article class="personnal-space-article">
                 <div class="personnal-space-wrapper">
                     <h2 class="personnal-space">Espace étudiant</h2>
